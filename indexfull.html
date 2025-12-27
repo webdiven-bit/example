@@ -1,0 +1,2765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ENPKJ3C86"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6ENPKJ3C86');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5342100389627018"
+     crossorigin="anonymous"></script>
+   <meta name="monetag" content="85656a4c543943d12344a1ae55b97a8a">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Background Remover</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f8fafc;
+            color: #1e293b;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #7c3aed, #06d6a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tab-container {
+            margin-bottom: 30px;
+        }
+
+        .tabs {
+            display: flex;
+            background: white;
+            border-radius: 12px;
+            padding: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 15px 20px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .tab.active {
+            background: #7c3aed;
+            color: white;
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Magic Background Remover <span style="display: inline-block; background: linear-gradient(90deg, #7c3aed, #06d6a0); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-left: 10px;">PRO</span></h1>
+            <p class="subtitle">Remove backgrounds from images and videos in seconds with our easy-to-use AI-powered tool</p>
+        </header>
+
+        <div class="tab-container">
+            <div class="tabs">
+                <div class="tab active" data-tab="color">
+                    <i class="fas fa-eye-dropper"></i>
+                    Color-Based Removal
+                </div>
+                <div class="tab" data-tab="drawing">
+                    <i class="fas fa-paint-brush"></i>
+                    Drawing-Based Removal
+                </div>
+            </div>
+
+            <!-- Color-Based Removal Tab - Original index2.html content -->
+            <div class="tab-content active" id="color-tab">
+                <!-- Original index2.html content starts here -->
+                <style>
+                    :root {
+                        --primary: #7c3aed;
+                        --primary-light: #8b5cf6;
+                        --secondary: #06d6a0;
+                        --accent: #f59e0b;
+                        --background: #f8fafc;
+                        --card: #ffffff;
+                        --text: #1e293b;
+                        --text-light: #64748b;
+                        --border: #e2e8f0;
+                        --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+                        --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .app-container {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 25px;
+                        margin-bottom: 30px;
+                    }
+
+                    @media (max-width: 768px) {
+                        .app-container {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    .card {
+                        background: var(--card);
+                        border-radius: 20px;
+                        padding: 25px;
+                        box-shadow: var(--shadow);
+                        border: 1px solid var(--border);
+                        transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    }
+
+                    .card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: var(--shadow-lg);
+                    }
+
+                    .preview-container {
+                        display: flex;
+                        flex-direction: column;
+                        height: 100%;
+                    }
+
+                    .preview-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 20px;
+                    }
+
+                    .preview-title {
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        color: var(--primary);
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    .preview-title i {
+                        font-size: 1.2rem;
+                    }
+
+                    .preview-stats {
+                        color: var(--text-light);
+                        font-size: 0.9rem;
+                        background: var(--background);
+                        padding: 5px 12px;
+                        border-radius: 20px;
+                    }
+
+                    .preview-content {
+                        flex: 1;
+                        background: #f1f5f9;
+                        border-radius: 12px;
+                        overflow: hidden;
+                        min-height: 350px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                    }
+
+                    .preview-content img, .preview-content video, .preview-content canvas {
+                        max-width: 100%;
+                        max-height: 100%;
+                        display: none;
+                        border-radius: 8px;
+                    }
+
+                    .preview-placeholder {
+                        color: var(--text-light);
+                        text-align: center;
+                        padding: 40px 20px;
+                    }
+
+                    .preview-placeholder i {
+                        font-size: 3rem;
+                        margin-bottom: 15px;
+                        color: var(--primary-light);
+                        opacity: 0.7;
+                    }
+
+                    .upload-section {
+                        text-align: center;
+                        margin-bottom: 30px;
+                    }
+
+                    .upload-area {
+                        border: 2px dashed var(--border);
+                        border-radius: 20px;
+                        padding: 60px 30px;
+                        text-align: center;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        background: var(--card);
+                        margin-bottom: 20px;
+                    }
+
+                    .upload-area:hover {
+                        border-color: var(--primary);
+                        background: rgba(124, 58, 237, 0.03);
+                    }
+
+                    .upload-icon {
+                        font-size: 4rem;
+                        margin-bottom: 20px;
+                        color: var(--primary);
+                    }
+
+                    .upload-btn {
+                        background: var(--primary);
+                        color: white;
+                        border: none;
+                        padding: 14px 32px;
+                        border-radius: 12px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        margin-top: 20px;
+                        font-size: 1.1rem;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 10px;
+                        box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+                    }
+
+                    .upload-btn:hover {
+                        background: var(--primary-light);
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
+                    }
+
+                    .supported-formats {
+                        margin-top: 15px;
+                        color: var(--text-light);
+                        font-size: 0.9rem;
+                    }
+
+                    .controls-section {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                    }
+
+                    .control-group {
+                        margin-bottom: 10px;
+                    }
+
+                    .control-label {
+                        display: block;
+                        margin-bottom: 15px;
+                        font-weight: 600;
+                        font-size: 1.1rem;
+                        color: var(--text);
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    .color-selection {
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                        margin-bottom: 20px;
+                        flex-wrap: wrap;
+                    }
+
+                    .color-preview {
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 12px;
+                        border: 3px solid var(--border);
+                        background-color: #00ff00;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .color-value {
+                        font-family: 'Monaco', 'Consolas', monospace;
+                        font-weight: 600;
+                        font-size: 1.1rem;
+                        color: var(--text);
+                    }
+
+                    .color-picker-btn {
+                        background: var(--card);
+                        border: 2px solid var(--primary);
+                        color: var(--primary);
+                        padding: 12px 20px;
+                        border-radius: 12px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        font-weight: 600;
+                        flex: 1;
+                        justify-content: center;
+                    }
+
+                    .color-picker-btn:hover {
+                        background: var(--primary);
+                        color: white;
+                    }
+
+                    .slider-group {
+                        margin-bottom: 25px;
+                    }
+
+                    .slider-label {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 12px;
+                    }
+
+                    .slider-value {
+                        color: var(--primary);
+                        font-weight: 700;
+                        font-family: 'Monaco', 'Consolas', monospace;
+                        background: rgba(124, 58, 237, 0.1);
+                        padding: 4px 12px;
+                        border-radius: 20px;
+                    }
+
+                    .slider {
+                        width: 100%;
+                        height: 10px;
+                        background: var(--border);
+                        border-radius: 5px;
+                        outline: none;
+                        -webkit-appearance: none;
+                    }
+
+                    .slider::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                        width: 24px;
+                        height: 24px;
+                        background: var(--primary);
+                        border-radius: 50%;
+                        cursor: pointer;
+                        border: 3px solid white;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+                    }
+
+                    .slider-help {
+                        color: var(--text-light);
+                        font-size: 0.85rem;
+                        margin-top: 8px;
+                        padding-left: 5px;
+                    }
+
+                    .action-buttons {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 15px;
+                        margin-top: 10px;
+                    }
+
+                    .btn {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+                        padding: 16px 24px;
+                        border: none;
+                        border-radius: 12px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        font-size: 1rem;
+                        text-align: center;
+                    }
+
+                    .btn-primary {
+                        background: var(--primary);
+                        color: white;
+                        box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+                    }
+
+                    .btn-primary:hover:not(:disabled) {
+                        background: var(--primary-light);
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
+                    }
+
+                    .btn-success {
+                        background: var(--secondary);
+                        color: white;
+                        box-shadow: 0 4px 12px rgba(6, 214, 160, 0.3);
+                    }
+
+                    .btn-success:hover:not(:disabled) {
+                        background: #05c290;
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 16px rgba(6, 214, 160, 0.4);
+                    }
+
+                    .btn-outline {
+                        background: transparent;
+                        color: var(--text);
+                        border: 2px solid var(--border);
+                    }
+
+                    .btn-outline:hover:not(:disabled) {
+                        background: var(--background);
+                        border-color: var(--primary-light);
+                    }
+
+                    .btn:disabled {
+                        opacity: 0.5;
+                        cursor: not-allowed;
+                        transform: none !important;
+                        box-shadow: none !important;
+                    }
+
+                    .video-controls {
+                        display: none;
+                        gap: 10px;
+                        margin-top: 15px;
+                        justify-content: center;
+                    }
+
+                    .video-control-btn {
+                        background: var(--background);
+                        border: 1px solid var(--border);
+                        color: var(--text);
+                        padding: 10px 16px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        font-size: 0.9rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        transition: all 0.2s ease;
+                    }
+
+                    .video-control-btn:hover {
+                        background: var(--primary);
+                        color: white;
+                    }
+
+                    .processing-notice {
+                        background: rgba(245, 158, 11, 0.1);
+                        border: 1px solid rgba(245, 158, 11, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        text-align: center;
+                        display: none;
+                        color: var(--text);
+                    }
+
+                    .processing-notice i {
+                        color: var(--accent);
+                        margin-right: 8px;
+                    }
+
+                    .progress-bar {
+                        width: 100%;
+                        height: 8px;
+                        background: var(--border);
+                        border-radius: 4px;
+                        margin-top: 10px;
+                        overflow: hidden;
+                        display: none;
+                    }
+
+                    .progress-fill {
+                        height: 100%;
+                        background: linear-gradient(90deg, var(--primary), var(--secondary));
+                        width: 0%;
+                        transition: width 0.3s ease;
+                    }
+
+                    .progress-text {
+                        text-align: center;
+                        margin-top: 5px;
+                        font-size: 0.9rem;
+                        color: var(--text-light);
+                        display: none;
+                    }
+
+                    .quality-options {
+                        display: flex;
+                        gap: 10px;
+                        margin-bottom: 15px;
+                        flex-wrap: wrap;
+                    }
+
+                    .quality-btn {
+                        padding: 8px 16px;
+                        border: 2px solid var(--border);
+                        background: var(--card);
+                        border-radius: 8px;
+                        cursor: pointer;
+                        transition: all 0.2s ease;
+                        font-size: 0.9rem;
+                    }
+
+                    .quality-btn.active {
+                        background: var(--primary);
+                        color: white;
+                        border-color: var(--primary);
+                    }
+
+                    .quality-btn:hover:not(.active) {
+                        border-color: var(--primary-light);
+                    }
+
+                    .tutorial-section {
+                        margin-top: 30px;
+                    }
+
+                    .tutorial-title {
+                        font-size: 1.3rem;
+                        margin-bottom: 15px;
+                        color: var(--primary);
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    .steps {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 15px;
+                    }
+
+                    .step {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 15px;
+                        padding: 15px;
+                        background: var(--background);
+                        border-radius: 12px;
+                    }
+
+                    .step-number {
+                        background: var(--primary);
+                        color: white;
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: bold;
+                        flex-shrink: 0;
+                    }
+
+                    .step-content {
+                        flex: 1;
+                    }
+
+                    .step-title {
+                        font-weight: 600;
+                        margin-bottom: 5px;
+                        color: var(--text);
+                    }
+
+                    .step-description {
+                        color: var(--text-light);
+                        font-size: 0.9rem;
+                    }
+
+                    .demo-video {
+                        margin-top: 30px;
+                        border-radius: 12px;
+                        overflow: hidden;
+                        box-shadow: var(--shadow);
+                        transition: all 0.3s ease;
+                    }
+
+                    .demo-video iframe {
+                        width: 100%;
+                        height: 250px;
+                        border: none;
+                    }
+
+                    .video-toggle {
+                        margin-top: 15px;
+                        text-align: center;
+                    }
+
+                    .video-toggle-btn {
+                        background: var(--background);
+                        border: 2px solid var(--border);
+                        color: var(--text-light);
+                        padding: 10px 16px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        font-size: 0.9rem;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 8px;
+                        transition: all 0.2s ease;
+                    }
+
+                    .video-toggle-btn:hover {
+                        background: var(--primary);
+                        color: white;
+                        border-color: var(--primary);
+                    }
+
+                    .color-picking-indicator {
+                        position: absolute;
+                        width: 24px;
+                        height: 24px;
+                        border: 3px solid white;
+                        border-radius: 50%;
+                        pointer-events: none;
+                        transform: translate(-50%, -50%);
+                        z-index: 10;
+                        display: none;
+                        box-shadow: 0 0 0 2px var(--primary);
+                    }
+
+                    .feature-badge {
+                        display: inline-block;
+                        background: linear-gradient(90deg, var(--primary), var(--secondary));
+                        color: white;
+                        padding: 5px 15px;
+                        border-radius: 20px;
+                        font-size: 0.8rem;
+                        font-weight: 600;
+                        margin-left: 10px;
+                    }
+
+                    .processing-section {
+                        display: none;
+                        animation: fadeIn 0.5s ease-in-out;
+                    }
+
+                    @keyframes fadeIn {
+                        from { opacity: 0; transform: translateY(20px); }
+                        to { opacity: 1; transform: translateY(0); }
+                    }
+
+                    .quality-notice {
+                        background: rgba(59, 130, 246, 0.1);
+                        border: 1px solid rgba(59, 130, 246, 0.3);
+                        border-radius: 8px;
+                        padding: 10px;
+                        margin-top: 10px;
+                        text-align: center;
+                        font-size: 0.85rem;
+                        color: var(--text-light);
+                    }
+                </style>
+
+                <div class="upload-section" id="uploadSection">
+                    <div class="card">
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <h3>Upload Your Photo or Video</h3>
+                            <p>Drag & drop your file here or click to browse</p>
+                            <input type="file" id="mediaUpload" accept="video/*,image/*" hidden>
+                            <button class="upload-btn" id="uploadBtn">
+                                <i class="fas fa-folder-open"></i>
+                                Choose File
+                            </button>
+                            <div class="supported-formats">
+                                <span>Supports: MP4, WebM, MOV, PNG, JPG, JPEG (Max 100MB)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="processing-section" id="processingSection">
+                    <div class="app-container">
+                        <div class="card preview-container">
+                            <div class="preview-header">
+                                <div class="preview-title">
+                                    <i class="fas fa-image"></i>
+                                    Original Media
+                                </div>
+                                <div class="preview-stats" id="originalStats"></div>
+                            </div>
+                            <div class="preview-content">
+                                <div class="preview-placeholder" id="originalPlaceholder">
+                                    <i class="fas fa-image"></i>
+                                    <p>Your media will appear here</p>
+                                </div>
+                                <video id="inputVideo" controls style="display: none;"></video>
+                                <img id="inputImage" style="display: none;">
+                                <div class="color-picking-indicator" id="colorPickingIndicator"></div>
+                            </div>
+                            <div class="video-controls" id="originalVideoControls">
+                                <button class="video-control-btn" id="playPauseBtn">
+                                    <i class="fas fa-play"></i>
+                                    Play/Pause
+                                </button>
+                                <button class="video-control-btn" id="restartBtn">
+                                    <i class="fas fa-redo"></i>
+                                    Restart
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="card preview-container">
+                            <div class="preview-header">
+                                <div class="preview-title">
+                                    <i class="fas fa-magic"></i>
+                                    Background Removed
+                                </div>
+                                <div class="preview-stats" id="processedStats"></div>
+                            </div>
+                            <div class="preview-content">
+                                <div class="preview-placeholder" id="processedPlaceholder">
+                                    <i class="fas fa-wand-magic-sparkles"></i>
+                                    <p>Your background-free media will appear here</p>
+                                </div>
+                                <video id="outputVideo" controls style="display: none;"></video>
+                                <canvas id="outputCanvas"></canvas>
+                            </div>
+                            <div class="video-controls" id="processedVideoControls">
+                                <button class="video-control-btn" id="downloadVideoBtn">
+                                    <i class="fas fa-download"></i>
+                                    Download Video
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card controls-section">
+                        <div class="control-group">
+                            <label class="control-label">
+                                <i class="fas fa-eye-dropper"></i>
+                                Select Background Color
+                            </label>
+                            <div class="color-selection">
+                                <div class="color-preview" id="colorPreview" style="background-color: #00ff00;"></div>
+                                <span id="colorValue">#00FF00</span>
+                                <button class="color-picker-btn" id="colorPickerBtn">
+                                    <i class="fas fa-crosshairs"></i>
+                                    Click to Pick Color
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label">
+                                <i class="fas fa-cog"></i>
+                                Video Quality Settings
+                            </label>
+                            <div class="quality-options">
+                                <button class="quality-btn active" data-fps="15" data-quality="0.95">Fast (15 FPS)</button>
+                                <button class="quality-btn" data-fps="24" data-quality="0.90">Balanced (24 FPS)</button>
+                                <button class="quality-btn" data-fps="30" data-quality="0.85">High Quality (30 FPS)</button>
+                            </div>
+                            <div class="slider-help">Preview shows lower quality for speed, final download is full quality</div>
+                            <div class="quality-notice">
+                                <i class="fas fa-info-circle"></i>
+                                Preview quality is optimized for speed. Final download maintains original quality.
+                            </div>
+                        </div>
+
+                        <div class="slider-group">
+                            <label class="slider-label">
+                                <span><i class="fas fa-sliders-h"></i> Color Match Sensitivity</span>
+                                <span class="slider-value" id="toleranceValue">30%</span>
+                            </label>
+                            <input type="range" id="toleranceSlider" min="0" max="100" value="30" class="slider">
+                            <div class="slider-help">Adjust to control how similar colors are removed (higher = more colors removed)</div>
+                        </div>
+
+                        <div class="processing-notice" id="videoProcessingNotice">
+                            <i class="fas fa-sync-alt fa-spin"></i>
+                            Processing video frames... Preview shows lower quality for speed.
+                        </div>
+
+                        <div class="progress-bar" id="progressBar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="progress-text" id="progressText">Processing: 0%</div>
+
+                        <div class="action-buttons">
+                            <button class="btn btn-primary" id="processVideoBtn" style="display: none;">
+                                <i class="fas fa-play-circle"></i>
+                                Process Video
+                            </button>
+                            <button class="btn btn-success" id="downloadBtn" disabled>
+                                <i class="fas fa-download"></i>
+                                Download Full Quality Result
+                            </button>
+                            <button class="btn btn-outline" id="resetBtn">
+                                <i class="fas fa-plus-circle"></i>
+                                New Media
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-section">
+                    <div class="card">
+                        <h3 class="tutorial-title">
+                            <i class="fas fa-graduation-cap"></i>
+                            How It Works
+                        </h3>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <div class="step-title">Upload Your Media</div>
+                                    <div class="step-description">Select an image or video from your device</div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <div class="step-title">Pick Background Color</div>
+                                    <div class="step-description">Click on the background color you want to remove</div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <div class="step-title">Adjust Sensitivity</div>
+                                    <div class="step-description">Fine-tune how much of the background gets removed</div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <div class="step-title">Download Result</div>
+                                    <div class="step-description">Save your background-free image or video in full quality</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-video" id="demoVideo">
+                    <h3 class="tutorial-title">
+                        <i class="fas fa-video"></i>
+                        See It In Action
+                    </h3>
+                    <iframe src="https://www.youtube.com/embed/nZr0rbS8DC8" title="Background Removal Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    
+                    <div class="video-toggle">
+                        <button class="video-toggle-btn" id="toggleVideoBtn">
+                            <i class="fas fa-eye-slash"></i>
+                            Hide Video
+                        </button>
+                    </div>
+                </div>
+
+                <script>
+                    // Original index2.html JavaScript code
+                    let selectedColor = '#00ff00';
+                    let currentMediaUrl = null;
+                    let currentMediaType = null;
+                    let isProcessingVideo = false;
+                    let colorPickingActive = false;
+                    let isVideoVisible = true;
+                    let currentFPS = 15;
+                    let currentQuality = 0.95;
+
+                    document.addEventListener('DOMContentLoaded', function() {
+                        initializeApp();
+                    });
+
+                    function initializeApp() {
+                        setupFileUpload();
+                        setupSliders();
+                        setupColorPicking();
+                        setupActionButtons();
+                        setupVideoControls();
+                        setupVideoToggle();
+                        setupQualityOptions();
+                    }
+
+                    function setupQualityOptions() {
+                        const qualityBtns = document.querySelectorAll('.quality-btn');
+                        qualityBtns.forEach(btn => {
+                            btn.addEventListener('click', function() {
+                                // Remove active class from all buttons
+                                qualityBtns.forEach(b => b.classList.remove('active'));
+                                // Add active class to clicked button
+                                this.classList.add('active');
+                                // Update settings
+                                currentFPS = parseInt(this.dataset.fps);
+                                currentQuality = parseFloat(this.dataset.quality);
+                            });
+                        });
+                    }
+
+                    function setupVideoToggle() {
+                        const toggleBtn = document.getElementById('toggleVideoBtn');
+                        const demoVideo = document.getElementById('demoVideo');
+                        
+                        toggleBtn.addEventListener('click', function() {
+                            if (isVideoVisible) {
+                                // Hide video
+                                demoVideo.style.display = 'none';
+                                toggleBtn.innerHTML = '<i class="fas fa-eye"></i> Show Video';
+                                isVideoVisible = false;
+                            } else {
+                                // Show video
+                                demoVideo.style.display = 'block';
+                                toggleBtn.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Video';
+                                isVideoVisible = true;
+                            }
+                        });
+                    }
+
+                    function setupFileUpload() {
+                        const uploadArea = document.getElementById('uploadArea');
+                        const fileInput = document.getElementById('mediaUpload');
+                        const uploadBtn = document.getElementById('uploadBtn');
+
+                        // Fix: Only trigger file input from the button, not the entire area
+                        uploadBtn.addEventListener('click', () => fileInput.click());
+
+                        fileInput.addEventListener('change', handleFileUpload);
+
+                        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                            uploadArea.addEventListener(eventName, preventDefaults, false);
+                        });
+
+                        function preventDefaults(e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                        }
+
+                        ['dragenter', 'dragover'].forEach(eventName => {
+                            uploadArea.addEventListener(eventName, () => uploadArea.classList.add('drag-over'), false);
+                        });
+
+                        ['dragleave', 'drop'].forEach(eventName => {
+                            uploadArea.addEventListener(eventName, () => uploadArea.classList.remove('drag-over'), false);
+                        });
+
+                        uploadArea.addEventListener('drop', (e) => {
+                            const files = e.dataTransfer.files;
+                            if (files.length > 0) {
+                                fileInput.files = files;
+                                handleFileUpload({ target: fileInput });
+                            }
+                        }, false);
+                    }
+
+                    function handleFileUpload(event) {
+                        const file = event.target.files[0];
+                        if (!file) {
+                            console.log('No file selected');
+                            return;
+                        }
+
+                        console.log('File selected:', file.name, file.type, file.size);
+
+                        if (!file.type.match('video.*') && !file.type.match('image.*')) {
+                            alert('Please upload a video or image file (MP4, WebM, MOV, PNG, JPG, JPEG)');
+                            return;
+                        }
+
+                        if (file.size > 100 * 1024 * 1024) { // 100MB
+                            alert('File size too large. Please choose a file smaller than 100MB.');
+                            return;
+                        }
+
+                        currentMediaType = file.type.match('video.*') ? 'video' : 'image';
+                        currentMediaUrl = URL.createObjectURL(file);
+                        console.log('Loading media:', currentMediaType, currentMediaUrl);
+                        loadMedia(currentMediaUrl, currentMediaType);
+                    }
+
+                    function loadMedia(fileUrl, mediaType) {
+                        const isVideo = mediaType === 'video';
+                        const inputElement = isVideo ? 
+                            document.getElementById('inputVideo') : 
+                            document.getElementById('inputImage');
+                        
+                        // Reset any previous color picking
+                        disableColorPicking();
+                        
+                        // Hide all media elements first
+                        document.getElementById('inputVideo').style.display = 'none';
+                        document.getElementById('inputImage').style.display = 'none';
+                        document.getElementById('outputVideo').style.display = 'none';
+                        document.getElementById('outputCanvas').style.display = 'none';
+                        document.getElementById('originalVideoControls').style.display = 'none';
+                        document.getElementById('processedVideoControls').style.display = 'none';
+                        document.getElementById('processVideoBtn').style.display = 'none';
+                        document.getElementById('videoProcessingNotice').style.display = 'none';
+                        document.getElementById('progressBar').style.display = 'none';
+                        document.getElementById('progressText').style.display = 'none';
+                        
+                        document.getElementById('originalPlaceholder').style.display = 'block';
+                        document.getElementById('processedPlaceholder').style.display = 'block';
+                        
+                        document.getElementById('uploadSection').style.display = 'none';
+                        document.getElementById('processingSection').style.display = 'block';
+                        
+                        if (isVideo) {
+                            const video = inputElement;
+                            // Clear any previous error handlers
+                            video.onerror = null;
+                            video.onloadedmetadata = null;
+                            
+                            video.onloadedmetadata = function() {
+                                console.log('Video loaded:', video.videoWidth, 'x', video.videoHeight);
+                                video.style.display = 'block';
+                                document.getElementById('originalPlaceholder').style.display = 'none';
+                                document.getElementById('originalStats').textContent = 
+                                    `${video.videoWidth} × ${video.videoHeight}`;
+                                document.getElementById('originalVideoControls').style.display = 'flex';
+                                document.getElementById('processVideoBtn').style.display = 'block';
+                            };
+                            video.onerror = function() {
+                                console.error('Error loading video');
+                                alert('Error loading video. Please try a different file.');
+                                resetApp();
+                            };
+                        } else {
+                            const img = inputElement;
+                            // Clear any previous error handlers
+                            img.onerror = null;
+                            img.onload = null;
+                            
+                            img.onload = function() {
+                                console.log('Image loaded:', img.naturalWidth, 'x', img.naturalHeight);
+                                img.style.display = 'block';
+                                document.getElementById('originalPlaceholder').style.display = 'none';
+                                document.getElementById('originalStats').textContent = 
+                                    `${img.naturalWidth} × ${img.naturalHeight}`;
+                            };
+                            img.onerror = function() {
+                                console.error('Error loading image');
+                                alert('Error loading image. Please try a different file.');
+                                resetApp();
+                            };
+                        }
+                        
+                        inputElement.src = fileUrl;
+                    }
+
+                    function setupSliders() {
+                        const toleranceSlider = document.getElementById('toleranceSlider');
+                        const toleranceValue = document.getElementById('toleranceValue');
+                        
+                        toleranceValue.textContent = toleranceSlider.value + '%';
+                        
+                        toleranceSlider.addEventListener('input', function() {
+                            toleranceValue.textContent = this.value + '%';
+                            
+                            if (currentMediaUrl && currentMediaType === 'image') {
+                                removeSelectedColor();
+                            }
+                        });
+                    }
+
+                    function setupColorPicking() {
+                        document.getElementById('colorPickerBtn').addEventListener('click', enableColorPicking);
+                    }
+
+                    function enableColorPicking() {
+                        if (!currentMediaUrl) {
+                            alert('Please upload media first');
+                            return;
+                        }
+                        
+                        const mediaElement = currentMediaType === 'video' ? 
+                            document.getElementById('inputVideo') : 
+                            document.getElementById('inputImage');
+                        const indicator = document.getElementById('colorPickingIndicator');
+                        
+                        if (mediaElement.style.display === 'none') {
+                            alert('Media is still loading. Please wait...');
+                            return;
+                        }
+                        
+                        colorPickingActive = true;
+                        mediaElement.style.cursor = 'crosshair';
+                        indicator.style.display = 'block';
+                        
+                        function pickColor(e) {
+                            if (!colorPickingActive) return;
+                            
+                            const rect = mediaElement.getBoundingClientRect();
+                            const x = e.clientX - rect.left;
+                            const y = e.clientY - rect.top;
+                            
+                            if (x < 0 || y < 0 || x > rect.width || y > rect.height) return;
+                            
+                            indicator.style.left = (x + 10) + 'px';
+                            indicator.style.top = (y + 10) + 'px';
+                            
+                            if (e.type === 'click') {
+                                const canvas = document.createElement('canvas');
+                                const ctx = canvas.getContext('2d');
+                                
+                                if (currentMediaType === 'video') {
+                                    canvas.width = mediaElement.videoWidth;
+                                    canvas.height = mediaElement.videoHeight;
+                                    ctx.drawImage(mediaElement, 0, 0);
+                                } else {
+                                    canvas.width = mediaElement.naturalWidth;
+                                    canvas.height = mediaElement.naturalHeight;
+                                    ctx.drawImage(mediaElement, 0, 0);
+                                }
+                                
+                                const pixelX = (x / rect.width) * canvas.width;
+                                const pixelY = (y / rect.height) * canvas.height;
+                                const pixel = ctx.getImageData(pixelX, pixelY, 1, 1).data;
+                                const hex = rgbToHex(pixel[0], pixel[1], pixel[2]);
+                                
+                                setColor(hex);
+                                
+                                if (currentMediaType === 'image') {
+                                    removeSelectedColor();
+                                }
+                                
+                                disableColorPicking();
+                            }
+                        }
+                        
+                        mediaElement.addEventListener('mousemove', pickColor);
+                        mediaElement.addEventListener('click', pickColor);
+                    }
+
+                    function disableColorPicking() {
+                        colorPickingActive = false;
+                        const mediaElement = currentMediaType === 'video' ? 
+                            document.getElementById('inputVideo') : 
+                            document.getElementById('inputImage');
+                        const indicator = document.getElementById('colorPickingIndicator');
+                        
+                        if (mediaElement) {
+                            mediaElement.style.cursor = '';
+                            mediaElement.removeEventListener('mousemove', () => {});
+                            mediaElement.removeEventListener('click', () => {});
+                        }
+                        indicator.style.display = 'none';
+                    }
+
+                    function setColor(color) {
+                        selectedColor = color;
+                        document.getElementById('colorPreview').style.backgroundColor = color;
+                        document.getElementById('colorValue').textContent = color.toUpperCase();
+                    }
+
+                    function rgbToHex(r, g, b) {
+                        return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+                    }
+
+                    function setupVideoControls() {
+                        document.getElementById('playPauseBtn').addEventListener('click', function() {
+                            const video = document.getElementById('inputVideo');
+                            if (video.paused) {
+                                video.play();
+                            } else {
+                                video.pause();
+                            }
+                        });
+
+                        document.getElementById('restartBtn').addEventListener('click', function() {
+                            const video = document.getElementById('inputVideo');
+                            video.currentTime = 0;
+                            video.play();
+                        });
+
+                        document.getElementById('downloadVideoBtn').addEventListener('click', function() {
+                            const video = document.getElementById('outputVideo');
+                            if (video.src) {
+                                const link = document.createElement('a');
+                                link.download = 'background-removed-video.webm';
+                                link.href = video.src;
+                                link.click();
+                            }
+                        });
+                    }
+
+                    function setupActionButtons() {
+                        document.getElementById('processVideoBtn').addEventListener('click', processVideo);
+                        document.getElementById('downloadBtn').addEventListener('click', downloadResult);
+                        document.getElementById('resetBtn').addEventListener('click', resetApp);
+                    }
+
+                    function removeSelectedColor() {
+                        const img = document.getElementById('inputImage');
+                        const canvas = document.getElementById('outputCanvas');
+                        const ctx = canvas.getContext('2d');
+                        
+                        if (!img.src || img.style.display === 'none') return;
+                        
+                        canvas.width = img.naturalWidth;
+                        canvas.height = img.naturalHeight;
+                        
+                        ctx.drawImage(img, 0, 0);
+                        
+                        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                        const data = imageData.data;
+                        
+                        const hex = selectedColor.replace('#', '');
+                        const targetR = parseInt(hex.substr(0, 2), 16);
+                        const targetG = parseInt(hex.substr(2, 2), 16);
+                        const targetB = parseInt(hex.substr(4, 2), 16);
+                        
+                        const tolerance = parseInt(document.getElementById('toleranceSlider').value) * 2.55;
+                        
+                        let pixelsChanged = 0;
+                        let totalPixels = data.length / 4;
+                        
+                        for (let i = 0; i < data.length; i += 4) {
+                            const r = data[i];
+                            const g = data[i + 1];
+                            const b = data[i + 2];
+                            
+                            const distance = Math.sqrt(
+                                Math.pow(r - targetR, 2) +
+                                Math.pow(g - targetG, 2) +
+                                Math.pow(b - targetB, 2)
+                            );
+                            
+                            if (distance < tolerance) {
+                                data[i] = 0;
+                                data[i + 1] = 0;
+                                data[i + 2] = 0;
+                                pixelsChanged++;
+                            }
+                        }
+                        
+                        ctx.putImageData(imageData, 0, 0);
+                        
+                        canvas.style.display = 'block';
+                        document.getElementById('processedPlaceholder').style.display = 'none';
+                        
+                        const percentChanged = Math.round((pixelsChanged / totalPixels) * 100);
+                        document.getElementById('processedStats').textContent = 
+                            `${percentChanged}% of background removed`;
+                        
+                        document.getElementById('downloadBtn').disabled = false;
+                    }
+
+                    async function processVideo() {
+                        if (isProcessingVideo) return;
+                        
+                        const inputVideo = document.getElementById('inputVideo');
+                        const outputCanvas = document.getElementById('outputCanvas');
+                        const ctx = outputCanvas.getContext('2d');
+                        
+                        if (!inputVideo.src || inputVideo.style.display === 'none') return;
+                        
+                        isProcessingVideo = true;
+                        document.getElementById('videoProcessingNotice').style.display = 'block';
+                        document.getElementById('progressBar').style.display = 'block';
+                        document.getElementById('progressText').style.display = 'block';
+                        document.getElementById('processVideoBtn').disabled = true;
+                        
+                        const video = inputVideo;
+                        const duration = video.duration;
+                        const totalFrames = Math.floor(duration * currentFPS);
+                        
+                        outputCanvas.width = video.videoWidth;
+                        outputCanvas.height = video.videoHeight;
+                        
+                        const hex = selectedColor.replace('#', '');
+                        const targetR = parseInt(hex.substr(0, 2), 16);
+                        const targetG = parseInt(hex.substr(2, 2), 16);
+                        const targetB = parseInt(hex.substr(4, 2), 16);
+                        const tolerance = parseInt(document.getElementById('toleranceSlider').value) * 2.55;
+                        
+                        const outputVideo = document.getElementById('outputVideo');
+                        const chunks = [];
+                        
+                        if (!window.MediaRecorder) {
+                            alert('Your browser does not support video recording. Please try Chrome or Firefox.');
+                            resetProcessingState();
+                            return;
+                        }
+                        
+                        let mediaRecorder;
+                        let mimeType = 'video/webm; codecs=vp9';
+                        
+                        if (!MediaRecorder.isTypeSupported(mimeType)) {
+                            mimeType = 'video/webm; codecs=vp8';
+                            if (!MediaRecorder.isTypeSupported(mimeType)) {
+                                mimeType = 'video/mp4';
+                            }
+                        }
+                        
+                        try {
+                            mediaRecorder = new MediaRecorder(outputCanvas.captureStream(currentFPS), {
+                                mimeType: mimeType,
+                                videoBitsPerSecond: 2500000 * currentQuality
+                            });
+                        } catch (e) {
+                            try {
+                                mediaRecorder = new MediaRecorder(outputCanvas.captureStream(currentFPS));
+                            } catch (e2) {
+                                alert('Your browser does not support video recording. Please try Chrome or Firefox.');
+                                resetProcessingState();
+                                return;
+                            }
+                        }
+                        
+                        mediaRecorder.ondataavailable = (e) => {
+                            if (e.data.size > 0) {
+                                chunks.push(e.data);
+                            }
+                        };
+                        
+                        mediaRecorder.onstop = () => {
+                            const blob = new Blob(chunks, { type: mimeType });
+                            const url = URL.createObjectURL(blob);
+                            outputVideo.src = url;
+                            
+                            outputVideo.style.display = 'block';
+                            outputCanvas.style.display = 'none';
+                            document.getElementById('processedPlaceholder').style.display = 'none';
+                            document.getElementById('processedVideoControls').style.display = 'flex';
+                            document.getElementById('processedStats').textContent = `Video processed at ${currentFPS} FPS`;
+                            document.getElementById('downloadBtn').disabled = false;
+                            resetProcessingState();
+                        };
+                        
+                        mediaRecorder.start();
+                        
+                        for (let i = 0; i < totalFrames; i++) {
+                            if (!isProcessingVideo) break;
+                            
+                            const time = (i / currentFPS);
+                            video.currentTime = time;
+                            
+                            await new Promise(resolve => {
+                                const seekHandler = () => {
+                                    requestAnimationFrame(() => {
+                                        ctx.drawImage(video, 0, 0, outputCanvas.width, outputCanvas.height);
+                                        
+                                        const imageData = ctx.getImageData(0, 0, outputCanvas.width, outputCanvas.height);
+                                        const data = imageData.data;
+                                        
+                                        const toleranceSquared = tolerance * tolerance;
+                                        
+                                        for (let j = 0; j < data.length; j += 4) {
+                                            const r = data[j];
+                                            const g = data[j + 1];
+                                            const b = data[j + 2];
+                                            
+                                            const distanceSquared = 
+                                                (r - targetR) * (r - targetR) +
+                                                (g - targetG) * (g - targetG) +
+                                                (b - targetB) * (b - targetB);
+                                            
+                                            if (distanceSquared < toleranceSquared) {
+                                                data[j] = 0;
+                                                data[j + 1] = 0;
+                                                data[j + 2] = 0;
+                                            }
+                                        }
+                                        
+                                        ctx.putImageData(imageData, 0, 0);
+                                        
+                                        const progress = ((i + 1) / totalFrames) * 100;
+                                        document.getElementById('progressFill').style.width = progress + '%';
+                                        document.getElementById('progressText').textContent = `Processing: ${Math.round(progress)}%`;
+                                        
+                                        video.removeEventListener('seeked', seekHandler);
+                                        resolve();
+                                    });
+                                };
+                                
+                                video.addEventListener('seeked', seekHandler);
+                            });
+                            
+                            if (i % 5 === 0) {
+                                await new Promise(resolve => setTimeout(resolve, 0));
+                            }
+                        }
+                        
+                        if (isProcessingVideo) {
+                            mediaRecorder.stop();
+                        }
+                    }
+
+                    function resetProcessingState() {
+                        isProcessingVideo = false;
+                        document.getElementById('videoProcessingNotice').style.display = 'none';
+                        document.getElementById('progressBar').style.display = 'none';
+                        document.getElementById('progressText').style.display = 'none';
+                        document.getElementById('processVideoBtn').disabled = false;
+                        document.getElementById('progressFill').style.width = '0%';
+                    }
+
+                    function downloadResult() {
+                        if (currentMediaType === 'image') {
+                            const canvas = document.getElementById('outputCanvas');
+                            const link = document.createElement('a');
+                            link.download = 'background-removed.png';
+                            link.href = canvas.toDataURL('image/png');
+                            link.click();
+                        } else {
+                            const video = document.getElementById('outputVideo');
+                            if (video.src) {
+                                const link = document.createElement('a');
+                                link.download = 'background-removed-video.webm';
+                                link.href = video.src;
+                                link.click();
+                            }
+                        }
+                    }
+
+                    function resetApp() {
+                        // Stop any ongoing processing
+                        isProcessingVideo = false;
+                        disableColorPicking();
+                        
+                        // Pause and reset videos PROPERLY
+                        const inputVideo = document.getElementById('inputVideo');
+                        if (inputVideo) {
+                            // Remove all event listeners first
+                            inputVideo.onerror = null;
+                            inputVideo.onloadedmetadata = null;
+                            inputVideo.onseeked = null;
+                            
+                            // Stop the video and clear sources
+                            inputVideo.pause();
+                            inputVideo.currentTime = 0;
+                            inputVideo.src = '';
+                            
+                            // Create a new video element to replace the old one
+                            const newVideo = document.createElement('video');
+                            newVideo.id = 'inputVideo';
+                            newVideo.controls = true;
+                            newVideo.style.display = 'none';
+                            
+                            // Replace the old video with the new one
+                            inputVideo.parentNode.replaceChild(newVideo, inputVideo);
+                        }
+                        
+                        const outputVideo = document.getElementById('outputVideo');
+                        if (outputVideo) {
+                            outputVideo.pause();
+                            outputVideo.currentTime = 0;
+                            if (outputVideo.src) {
+                                URL.revokeObjectURL(outputVideo.src);
+                                outputVideo.src = '';
+                            }
+                        }
+                        
+                        // Clean up media URLs
+                        if (currentMediaUrl) {
+                            URL.revokeObjectURL(currentMediaUrl);
+                            currentMediaUrl = null;
+                        }
+                        
+                        currentMediaType = null;
+                        
+                        // DO NOT reset file input - this was causing the issue!
+                        // document.getElementById('mediaUpload').value = '';
+                        
+                        // Reset all displays
+                        document.getElementById('inputVideo').style.display = 'none';
+                        document.getElementById('inputImage').style.display = 'none';
+                        document.getElementById('outputVideo').style.display = 'none';
+                        document.getElementById('outputCanvas').style.display = 'none';
+                        
+                        document.getElementById('originalVideoControls').style.display = 'none';
+                        document.getElementById('processedVideoControls').style.display = 'none';
+                        document.getElementById('processVideoBtn').style.display = 'none';
+                        document.getElementById('videoProcessingNotice').style.display = 'none';
+                        document.getElementById('progressBar').style.display = 'none';
+                        document.getElementById('progressText').style.display = 'none';
+                        
+                        document.getElementById('originalPlaceholder').style.display = 'block';
+                        document.getElementById('processedPlaceholder').style.display = 'block';
+                        
+                        document.getElementById('originalStats').textContent = '';
+                        document.getElementById('processedStats').textContent = '';
+                        
+                        document.getElementById('downloadBtn').disabled = true;
+                        document.getElementById('processVideoBtn').disabled = false;
+                        
+                        // Reset progress bar
+                        document.getElementById('progressFill').style.width = '0%';
+                        
+                        // Show upload section again
+                        document.getElementById('uploadSection').style.display = 'block';
+                        document.getElementById('processingSection').style.display = 'none';
+                    }
+                </script>
+                <!-- Original index2.html content ends here -->
+            </div>
+
+            <!-- Drawing-Based Removal Tab - Original indexrt.html content -->
+            <div class="tab-content" id="drawing-tab">
+                <!-- Original indexrt.html content starts here -->
+                <style>
+                    .indexrt-body {
+                        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+                        color: #1e293b;
+                        line-height: 1.6;
+                    }
+
+                    .indexrt-container {
+                        max-width: 1280px;
+                        margin: 0 auto;
+                        padding: 30px;
+                        min-height: 100vh;
+                    }
+
+                    .indexrt-header {
+                        text-align: center;
+                        margin-bottom: 40px;
+                        padding: 20px;
+                    }
+
+                    .indexrt-h1 {
+                        font-size: 2.8rem;
+                        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        color: transparent;
+                        margin-bottom: 10px;
+                        font-weight: 800;
+                    }
+
+                    .indexrt-subtitle {
+                        color: #64748b;
+                        font-size: 1.1rem;
+                        max-width: 600px;
+                        margin: 0 auto;
+                    }
+
+                    .indexrt-main-content {
+                        display: flex;
+                        gap: 30px;
+                        align-items: flex-start;
+                    }
+
+                    .indexrt-controls, .indexrt-canvas-area {
+                        background: white;
+                        padding: 30px;
+                        border-radius: 16px;
+                        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
+                        border: 1px solid #e2e8f0;
+                    }
+
+                    .indexrt-controls {
+                        min-width: 320px;
+                        max-width: 320px;
+                    }
+
+                    .indexrt-controls h2 {
+                        font-size: 1.4rem;
+                        margin-bottom: 20px;
+                        color: #1e293b;
+                        border-bottom: 2px solid #3b82f6;
+                        padding-bottom: 15px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    .indexrt-controls h2::before {
+                        content: "⚙️";
+                        font-size: 1.2rem;
+                    }
+
+                    .indexrt-tool-section {
+                        margin-bottom: 25px;
+                        padding: 20px;
+                        background: #f8fafc;
+                        border-radius: 12px;
+                        border: 1px solid #e2e8f0;
+                    }
+
+                    .indexrt-tool-section h3 {
+                        color: #1e40af;
+                        margin-bottom: 15px;
+                        font-size: 1.1rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                    }
+
+                    .indexrt-tool-section h3::before {
+                        content: "";
+                        display: inline-block;
+                        width: 6px;
+                        height: 6px;
+                        background: #3b82f6;
+                        border-radius: 50%;
+                    }
+
+                    .indexrt-file-type-selector {
+                        display: flex;
+                        gap: 10px;
+                        margin-bottom: 15px;
+                    }
+
+                    .indexrt-file-type-selector button {
+                        flex: 1;
+                        padding: 10px;
+                        border: 1px solid #e2e8f0;
+                        border-radius: 8px;
+                        background: white;
+                        cursor: pointer;
+                        transition: all 0.2s ease;
+                    }
+
+                    .indexrt-file-type-selector button.active {
+                        background: #3b82f6;
+                        color: white;
+                        border-color: #3b82f6;
+                    }
+
+                    .indexrt-tool-buttons {
+                        display: flex;
+                        gap: 10px;
+                        margin-bottom: 15px;
+                    }
+
+                    .indexrt-tool-buttons button {
+                        flex-grow: 1;
+                        padding: 12px;
+                        background: white;
+                        border: 1px solid #e2e8f0;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        transition: all 0.2s ease-in-out;
+                        color: #475569;
+                        font-weight: 500;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 8px;
+                    }
+
+                    .indexrt-tool-buttons button:hover {
+                        background: #e0f2fe;
+                        border-color: #3b82f6;
+                    }
+
+                    .indexrt-tool-buttons button.active {
+                        background: #3b82f6;
+                        color: white;
+                        border-color: #3b82f6;
+                        box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+                    }
+
+                    .indexrt-brush-size-control label {
+                        display: block;
+                        margin-bottom: 10px;
+                        font-weight: 600;
+                        color: #334155;
+                    }
+
+                    .indexrt-size-display {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        font-size: 0.9rem;
+                        color: #64748b;
+                    }
+
+                    .indexrt-video-controls {
+                        display: none;
+                        gap: 10px;
+                        margin-top: 15px;
+                    }
+
+                    .indexrt-video-controls button {
+                        flex: 1;
+                        padding: 10px;
+                        border: 1px solid #e2e8f0;
+                        border-radius: 6px;
+                        background: white;
+                        cursor: pointer;
+                    }
+
+                    .indexrt-video-controls button:hover {
+                        background: #f1f5f9;
+                    }
+
+                    .indexrt-action-buttons button {
+                        width: 100%;
+                        padding: 14px;
+                        margin-top: 15px;
+                        border: none;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        font-weight: 600;
+                        transition: all 0.2s ease;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 8px;
+                    }
+
+                    #indexrt-processBtn {
+                        background: #10b981;
+                        color: white;
+                        box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.3);
+                    }
+
+                    #indexrt-processBtn:hover:not(:disabled) {
+                        background: #059669;
+                        transform: translateY(-1px);
+                    }
+
+                    #indexrt-processBtn:disabled {
+                        background: #a7f3d0;
+                        cursor: not-allowed;
+                        transform: none;
+                    }
+
+                    #indexrt-clearMask {
+                        background: white;
+                        color: #475569;
+                        border: 1px solid #e2e8f0;
+                    }
+
+                    #indexrt-clearMask:hover {
+                        background: #f1f5f9;
+                        border-color: #cbd5e1;
+                    }
+
+                    #indexrt-resetBtn {
+                        background: #fef2f2;
+                        color: #ef4444;
+                        border: 1px solid #fecaca;
+                    }
+
+                    #indexrt-resetBtn:hover {
+                        background: #fee2e2;
+                    }
+
+                    .indexrt-status {
+                        margin-top: 25px;
+                        padding: 15px;
+                        border-radius: 8px;
+                        background: #e0f2fe;
+                        color: #0369a1;
+                        text-align: center;
+                        font-size: 1rem;
+                        border-left: 4px solid #3b82f6;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+                    }
+
+                    .indexrt-status::before {
+                        content: "ℹ️";
+                    }
+
+                    .indexrt-canvas-area {
+                        flex-grow: 1;
+                        min-height: 500px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        overflow: hidden;
+                    }
+
+                    .indexrt-canvas-container {
+                        position: relative;
+                        background: repeating-conic-gradient(#f1f5f9 0% 25%, #ffffff 0% 50%) 0 / 20px 20px;
+                        border: 1px solid #e2e8f0;
+                        border-radius: 8px;
+                        display: inline-block;
+                    }
+
+                    #indexrt-mainCanvas, #indexrt-drawingCanvas, #indexrt-videoElement {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    #indexrt-mainCanvas {
+                        z-index: 1;
+                    }
+
+                    #indexrt-drawingCanvas {
+                        cursor: crosshair;
+                        z-index: 2;
+                    }
+
+                    #indexrt-videoElement {
+                        z-index: 0;
+                        display: none;
+                    }
+
+                    .indexrt-canvas-placeholder {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        background: #f8fafc;
+                        border: 3px dashed #cbd5e1;
+                        border-radius: 14px;
+                        z-index: 3;
+                        cursor: pointer;
+                        transition: all 0.2s ease;
+                    }
+
+                    .indexrt-canvas-placeholder:hover {
+                        background: #f1f5f9;
+                        border-color: #3b82f6;
+                    }
+
+                    .indexrt-canvas-placeholder.hidden {
+                        display: none;
+                    }
+
+                    .indexrt-placeholder-content {
+                        text-align: center;
+                        color: #64748b;
+                    }
+
+                    .indexrt-placeholder-icon {
+                        font-size: 64px;
+                        margin-bottom: 15px;
+                        opacity: 0.7;
+                    }
+
+                    .indexrt-placeholder-text {
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        color: #334155;
+                    }
+
+                    #indexrt-uploadArea {
+                        text-align: center;
+                        padding: 25px;
+                        background: white;
+                        border: 2px dashed #cbd5e1;
+                        border-radius: 12px;
+                        cursor: pointer;
+                        transition: all 0.2s ease;
+                    }
+
+                    #indexrt-uploadArea:hover {
+                        border-color: #3b82f6;
+                        background: #f0f9ff;
+                    }
+
+                    .indexrt-upload-button {
+                        padding: 12px 25px;
+                        background: #3b82f6;
+                        color: white;
+                        border: none;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        font-weight: 600;
+                        transition: all 0.2s ease;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 8px;
+                        box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+                    }
+
+                    .indexrt-upload-button:hover {
+                        background: #2563eb;
+                        transform: translateY(-1px);
+                    }
+
+                    .indexrt-upload-button::before {
+                        content: "📁";
+                    }
+
+                    #indexrt-fileInput {
+                        display: none;
+                    }
+
+                    /* Tool icons */
+                    #indexrt-brushTool::before {
+                        content: "🖌️";
+                    }
+
+                    #indexrt-eraserTool::before {
+                        content: "🧽";
+                    }
+
+                    #indexrt-clearMask::before {
+                        content: "🗑️";
+                    }
+
+                    #indexrt-processBtn::before {
+                        content: "🔮";
+                    }
+
+                    #indexrt-resetBtn::before {
+                        content: "🔄";
+                    }
+
+                    .indexrt-server-status {
+                        position: fixed;
+                        top: 10px;
+                        right: 10px;
+                        padding: 8px 12px;
+                        border-radius: 20px;
+                        font-size: 0.8rem;
+                        font-weight: 600;
+                        z-index: 1000;
+                    }
+
+                    .indexrt-server-status.online {
+                        background: #dcfce7;
+                        color: #166534;
+                        border: 1px solid #bbf7d0;
+                    }
+
+                    .indexrt-server-status.offline {
+                        background: #fef2f2;
+                        color: #991b1b;
+                        border: 1px solid #fecaca;
+                    }
+
+                    .indexrt-processing-progress {
+                        display: none;
+                        margin-top: 15px;
+                        padding: 10px;
+                        background: #f0f9ff;
+                        border-radius: 8px;
+                        border: 1px solid #e0f2fe;
+                    }
+
+                    .indexrt-progress-bar {
+                        width: 100%;
+                        height: 20px;
+                        background: #e2e8f0;
+                        border-radius: 10px;
+                        overflow: hidden;
+                    }
+
+                    .indexrt-progress-fill {
+                        height: 100%;
+                        background: #3b82f6;
+                        width: 0%;
+                        transition: width 0.3s ease;
+                    }
+
+                    .indexrt-video-info {
+                        font-size: 0.8rem;
+                        color: #64748b;
+                        margin-top: 5px;
+                        text-align: center;
+                    }
+                </style>
+
+                <div class="indexrt-server-status offline" id="indexrt-serverStatus">Backend: Offline (Client-side only)</div>
+                
+                <div class="indexrt-container">
+                    <div class="indexrt-header">
+                        <h1 class="indexrt-h1">Background Remover</h1>
+                        <p class="indexrt-subtitle">Upload image or video → Draw around objects → Get processed file back</p>
+                    </div>
+
+                    <div class="indexrt-main-content">
+                        <div class="indexrt-controls">
+                            <h2>Controls</h2>
+                            <div class="indexrt-tool-section">
+                                <h3>1. Upload File</h3>
+                                <div class="indexrt-file-type-selector">
+                                    <button id="indexrt-imageTypeBtn" class="active">Image</button>
+                                    <button id="indexrt-videoTypeBtn">Video</button>
+                                </div>
+                                <div id="indexrt-uploadArea">
+                                    <div class="indexrt-upload-button">Upload Image</div>
+                                    <input type="file" id="indexrt-fileInput" accept="image/*">
+                                </div>
+                                <div class="indexrt-video-info" id="indexrt-videoInfo" style="display: none;">
+                                    Draw on any frame - mask applies to entire video
+                                </div>
+                            </div>
+
+                            <div class="indexrt-tool-section">
+                                <h3>2. Draw Mask</h3>
+                                <div class="indexrt-brush-size-control">
+                                    <label>Brush Size: <span id="indexrt-brushSizeValue">20</span>px</label>
+                                    <input type="range" id="indexrt-brushSize" min="5" max="50" value="20">
+                                </div>
+                                <div class="indexrt-tool-buttons">
+                                    <button id="indexrt-brushTool" class="indexrt-tool-btn active">Brush</button>
+                                    <button id="indexrt-eraserTool" class="indexrt-tool-btn">Eraser</button>
+                                </div>
+                                <button id="indexrt-clearMask" class="indexrt-action-btn">Clear Drawing</button>
+                                
+                                <div class="indexrt-video-controls" id="indexrt-videoControls">
+                                    <button id="indexrt-playPauseBtn">⏸️ Pause</button>
+                                    <button id="indexrt-captureFrameBtn">📷 Use This Frame</button>
+                                </div>
+                            </div>
+
+                            <div class="indexrt-tool-section">
+                                <h3>3. Process</h3>
+                                <button id="indexrt-processBtn" class="indexrt-action-btn" disabled>Process & Download</button>
+                                <button id="indexrt-resetBtn" class="indexrt-action-btn">Reset All</button>
+                            </div>
+
+                            <div class="indexrt-processing-progress" id="indexrt-processingProgress">
+                                <div class="indexrt-progress-bar">
+                                    <div class="indexrt-progress-fill" id="indexrt-progressFill"></div>
+                                </div>
+                                <div style="text-align: center; margin-top: 5px; font-size: 0.9rem;" id="indexrt-progressText">Processing...</div>
+                            </div>
+                            
+                            <div class="indexrt-status" id="indexrt-status">Ready - Upload an image or video</div>
+                        </div>
+
+                        <div class="indexrt-canvas-area">
+                            <div class="indexrt-canvas-container" id="indexrt-canvasContainer">
+                                <canvas id="indexrt-mainCanvas"></canvas>
+                                <canvas id="indexrt-drawingCanvas"></canvas>
+                                <video id="indexrt-videoElement" controls></video>
+                                <div id="indexrt-canvasPlaceholder" class="indexrt-canvas-placeholder">
+                                    <div class="indexrt-placeholder-content">
+                                        <div class="indexrt-placeholder-icon">🖼️</div>
+                                        <div class="indexrt-placeholder-text">Upload an image or video to start</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    // Original indexrt.html JavaScript code
+                    class BackgroundRemover {
+                        constructor() {
+                            this.canvas = document.getElementById('indexrt-mainCanvas');
+                            this.drawingCanvas = document.getElementById('indexrt-drawingCanvas');
+                            this.videoElement = document.getElementById('indexrt-videoElement');
+                            this.ctx = this.canvas.getContext('2d');
+                            this.drawingCtx = this.drawingCanvas.getContext('2d');
+                            this.status = document.getElementById('indexrt-status');
+                            this.serverStatus = document.getElementById('indexrt-serverStatus');
+
+                            this.isDrawing = false;
+                            this.currentTool = 'brush';
+                            this.brushSize = 20;
+                            this.currentFileType = 'image';
+                            this.originalImage = null;
+                            this.currentVideo = null;
+                            this.isVideoPlaying = false;
+                            this.videoFile = null;
+
+                            this.lastX = 0;
+                            this.lastY = 0;
+                            this.pathPoints = [];
+
+                            this.init();
+                        }
+
+                        init() {
+                            console.log('🚀 Initializing Background Remover...');
+                            this.setupCanvases();
+                            this.setupUploadSystem();
+                            this.setupEventListeners();
+                            this.updateStatus('Ready to upload image or video');
+                        }
+
+                        updateStatus(message) {
+                            console.log('Status:', message);
+                            this.status.textContent = message;
+                        }
+
+                        setupUploadSystem() {
+                            const uploadArea = document.getElementById('indexrt-uploadArea');
+                            const fileInput = document.getElementById('indexrt-fileInput');
+                            const imageTypeBtn = document.getElementById('indexrt-imageTypeBtn');
+                            const videoTypeBtn = document.getElementById('indexrt-videoTypeBtn');
+                            const videoInfo = document.getElementById('indexrt-videoInfo');
+
+                            // File type selection
+                            imageTypeBtn.addEventListener('click', () => {
+                                this.setFileType('image');
+                                imageTypeBtn.classList.add('active');
+                                videoTypeBtn.classList.remove('active');
+                                fileInput.accept = 'image/*';
+                                uploadArea.querySelector('.indexrt-upload-button').textContent = 'Upload Image';
+                                videoInfo.style.display = 'none';
+                            });
+
+                            videoTypeBtn.addEventListener('click', () => {
+                                this.setFileType('video');
+                                videoTypeBtn.classList.add('active');
+                                imageTypeBtn.classList.remove('active');
+                                fileInput.accept = 'video/*';
+                                uploadArea.querySelector('.indexrt-upload-button').textContent = 'Upload Video';
+                                videoInfo.style.display = 'block';
+                            });
+
+                            uploadArea.addEventListener('click', () => {
+                                fileInput.click();
+                            });
+
+                            fileInput.addEventListener('change', (e) => {
+                                const file = e.target.files[0];
+                                if (file) {
+                                    this.videoFile = file; // Store the original file for video processing
+                                    this.handleFileUpload(file);
+                                }
+                            });
+
+                            uploadArea.addEventListener('dragover', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                uploadArea.classList.add('drag-over');
+                                this.updateStatus('Drop file here...');
+                            });
+
+                            uploadArea.addEventListener('dragleave', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                uploadArea.classList.remove('drag-over');
+                                this.updateStatus('Ready to upload');
+                            });
+
+                            uploadArea.addEventListener('drop', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                uploadArea.classList.remove('drag-over');
+
+                                const files = e.dataTransfer.files;
+                                if (files.length > 0) {
+                                    this.videoFile = files[0];
+                                    this.handleFileUpload(files[0]);
+                                }
+                            });
+                        }
+
+                        setFileType(type) {
+                            this.currentFileType = type;
+                            const videoControls = document.getElementById('indexrt-videoControls');
+                            if (type === 'video') {
+                                videoControls.style.display = 'flex';
+                                this.updateStatus('Video mode - upload a video file');
+                            } else {
+                                videoControls.style.display = 'none';
+                                this.updateStatus('Image mode - upload an image file');
+                            }
+                        }
+
+                        handleFileUpload(file) {
+                            console.log('📄 Processing file:', file.name, file.type, file.size);
+
+                            const isImage = file.type.startsWith('image/');
+                            const isVideo = file.type.startsWith('video/');
+
+                            if (!isImage && !isVideo) {
+                                this.updateStatus('❌ Please select an image or video file');
+                                alert('Please select an image or video file');
+                                return;
+                            }
+
+                            if (file.size > 100 * 1024 * 1024) {
+                                this.updateStatus('❌ File too large (max 100MB)');
+                                alert('Please select a file smaller than 100MB');
+                                return;
+                            }
+
+                            this.updateStatus('📤 Loading file...');
+
+                            if (isImage) {
+                                const reader = new FileReader();
+                                reader.onload = (e) => this.loadImage(e.target.result);
+                                reader.onerror = () => this.handleLoadError();
+                                reader.readAsDataURL(file);
+                            } else {
+                                this.loadVideo(URL.createObjectURL(file));
+                            }
+                        }
+
+                        loadImage(dataUrl) {
+                            const img = new Image();
+                            img.onload = () => {
+                                this.originalImage = img;
+                                this.displayImage(img);
+                                this.updateStatus('✅ Image loaded! Draw around objects to keep');
+                            };
+                            img.onerror = () => this.handleLoadError();
+                            img.src = dataUrl;
+                        }
+
+                        loadVideo(videoUrl) {
+                            this.videoElement.src = videoUrl;
+                            this.currentVideo = this.videoElement;
+                            
+                            this.videoElement.onloadeddata = () => {
+                                this.setCanvasToVideoSize();
+                                this.videoElement.style.display = 'block';
+                                document.getElementById('indexrt-canvasPlaceholder').classList.add('hidden');
+                                document.getElementById('indexrt-processBtn').disabled = false;
+                                this.setupDrawingEvents();
+                                this.updateStatus('✅ Video loaded! Pause and draw on any frame');
+                            };
+
+                            this.videoElement.onerror = () => this.handleLoadError();
+                        }
+
+                        handleLoadError() {
+                            this.updateStatus('❌ Error loading file');
+                            alert('Error loading the file. The file might be corrupted or in an unsupported format.');
+                        }
+
+                        displayImage(img) {
+                            document.getElementById('indexrt-canvasPlaceholder').classList.add('hidden');
+                            document.getElementById('indexrt-processBtn').disabled = false;
+                            this.setCanvasToImageSize(img);
+                            this.drawImageToCanvas(img);
+                            this.setupDrawingEvents();
+                        }
+
+                        setCanvasToImageSize(img) {
+                            const maxWidth = 800;
+                            const maxHeight = 600;
+                            let { width, height } = this.calculateAspectRatio(img.width, img.height, maxWidth, maxHeight);
+
+                            this.canvas.width = width;
+                            this.canvas.height = height;
+                            this.drawingCanvas.width = width;
+                            this.drawingCanvas.height = height;
+
+                            const container = document.querySelector('.indexrt-canvas-container');
+                            container.style.width = width + 'px';
+                            container.style.height = height + 'px';
+                        }
+
+                        setCanvasToVideoSize() {
+                            const video = this.videoElement;
+                            const maxWidth = 800;
+                            const maxHeight = 600;
+                            let { width, height } = this.calculateAspectRatio(video.videoWidth, video.videoHeight, maxWidth, maxHeight);
+
+                            this.canvas.width = width;
+                            this.canvas.height = height;
+                            this.drawingCanvas.width = width;
+                            this.drawingCanvas.height = height;
+
+                            const container = document.querySelector('.indexrt-canvas-container');
+                            container.style.width = width + 'px';
+                            container.style.height = height + 'px';
+                        }
+
+                        calculateAspectRatio(originalWidth, originalHeight, maxWidth, maxHeight) {
+                            let width = originalWidth;
+                            let height = originalHeight;
+
+                            if (width > maxWidth) {
+                                height = (height * maxWidth) / width;
+                                width = maxWidth;
+                            }
+
+                            if (height > maxHeight) {
+                                width = (width * maxHeight) / height;
+                                height = maxHeight;
+                            }
+
+                            return { width: Math.round(width), height: Math.round(height) };
+                        }
+
+                        drawImageToCanvas(img) {
+                            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                            this.ctx.drawImage(img, 0, 0, this.canvas.width, this.canvas.height);
+                        }
+
+                        setupEventListeners() {
+                            // Brush size
+                            document.getElementById('indexrt-brushSize').addEventListener('input', (e) => {
+                                this.brushSize = parseInt(e.target.value);
+                                document.getElementById('indexrt-brushSizeValue').textContent = this.brushSize + 'px';
+                            });
+
+                            // Tools
+                            document.getElementById('indexrt-brushTool').addEventListener('click', () => this.setTool('brush'));
+                            document.getElementById('indexrt-eraserTool').addEventListener('click', () => this.setTool('eraser'));
+                            document.getElementById('indexrt-clearMask').addEventListener('click', () => this.clearMask());
+
+                            // Video controls
+                            document.getElementById('indexrt-playPauseBtn').addEventListener('click', () => this.toggleVideoPlayback());
+                            document.getElementById('indexrt-captureFrameBtn').addEventListener('click', () => this.captureVideoFrame());
+
+                            // Process and reset
+                            document.getElementById('indexrt-processBtn').addEventListener('click', () => this.processFile());
+                            document.getElementById('indexrt-resetBtn').addEventListener('click', () => this.resetAll());
+
+                            // Video time update for live drawing
+                            this.videoElement.addEventListener('timeupdate', () => {
+                                if (this.currentFileType === 'video') {
+                                    this.drawVideoFrameToCanvas();
+                                }
+                            });
+                        }
+
+                        setupDrawingEvents() {
+                            this.drawingCanvas.replaceWith(this.drawingCanvas.cloneNode(true));
+                            this.drawingCanvas = document.getElementById('indexrt-drawingCanvas');
+                            this.drawingCtx = this.drawingCanvas.getContext('2d');
+                            this.pathPoints = [];
+
+                            this.drawingCanvas.addEventListener('mousedown', (e) => this.startDrawing(e));
+                            this.drawingCanvas.addEventListener('mousemove', (e) => this.draw(e));
+                            this.drawingCanvas.addEventListener('mouseup', () => this.stopDrawing());
+                            this.drawingCanvas.addEventListener('mouseout', () => this.stopDrawing());
+                        }
+
+                        startDrawing(e) {
+                            if (this.currentFileType === 'video' && !this.videoElement.paused) {
+                                this.videoElement.pause();
+                                this.isVideoPlaying = false;
+                                document.getElementById('indexrt-playPauseBtn').textContent = '▶️ Play';
+                            }
+
+                            this.isDrawing = true;
+                            const rect = this.drawingCanvas.getBoundingClientRect();
+                            this.lastX = e.clientX - rect.left;
+                            this.lastY = e.clientY - rect.top;
+                            this.pathPoints = [{x: this.lastX, y: this.lastY}];
+                            this.drawPoint(this.lastX, this.lastY);
+                        }
+
+                        draw(e) {
+                            if (!this.isDrawing) return;
+                            const rect = this.drawingCanvas.getBoundingClientRect();
+                            const x = e.clientX - rect.left;
+                            const y = e.clientY - rect.top;
+                            this.pathPoints.push({x: x, y: y});
+                            this.drawLine(this.lastX, this.lastY, x, y);
+                            this.lastX = x;
+                            this.lastY = y;
+                        }
+
+                        stopDrawing() {
+                            this.isDrawing = false;
+                            if (this.pathPoints.length > 10 && this.currentTool === 'brush') {
+                                this.fillClosedShape();
+                            }
+                        }
+
+                        drawLine(x1, y1, x2, y2) {
+                            this.drawingCtx.lineJoin = 'round';
+                            this.drawingCtx.lineCap = 'round';
+                            this.drawingCtx.lineWidth = this.brushSize;
+
+                            if (this.currentTool === 'brush') {
+                                this.drawingCtx.globalCompositeOperation = 'source-over';
+                                this.drawingCtx.strokeStyle = 'white';
+                            } else {
+                                this.drawingCtx.globalCompositeOperation = 'destination-out';
+                                this.drawingCtx.strokeStyle = 'rgba(0,0,0,1)';
+                            }
+
+                            this.drawingCtx.beginPath();
+                            this.drawingCtx.moveTo(x1, y1);
+                            this.drawingCtx.lineTo(x2, y2);
+                            this.drawingCtx.stroke();
+                        }
+
+                        drawPoint(x, y) {
+                            this.drawingCtx.beginPath();
+                            if (this.currentTool === 'brush') {
+                                this.drawingCtx.globalCompositeOperation = 'source-over';
+                                this.drawingCtx.fillStyle = 'white';
+                            } else {
+                                this.drawingCtx.globalCompositeOperation = 'destination-out';
+                                this.drawingCtx.fillStyle = 'rgba(0,0,0,1)';
+                            }
+                            this.drawingCtx.arc(x, y, this.brushSize / 2, 0, Math.PI * 2);
+                            this.drawingCtx.fill();
+                        }
+
+                        fillClosedShape() {
+                            if (this.pathPoints.length < 3) return;
+                            this.drawingCtx.globalCompositeOperation = 'source-over';
+                            this.drawingCtx.fillStyle = 'white';
+                            this.drawingCtx.beginPath();
+                            this.drawingCtx.moveTo(this.pathPoints[0].x, this.pathPoints[0].y);
+                            for (let i = 1; i < this.pathPoints.length; i++) {
+                                this.drawingCtx.lineTo(this.pathPoints[i].x, this.pathPoints[i].y);
+                            }
+                            this.drawingCtx.closePath();
+                            this.drawingCtx.fill();
+                            this.pathPoints = [];
+                            this.updateStatus('Shape filled! Everything inside will be kept.');
+                        }
+
+                        setTool(tool) {
+                            this.currentTool = tool;
+                            document.getElementById('indexrt-brushTool').classList.toggle('active', tool === 'brush');
+                            document.getElementById('indexrt-eraserTool').classList.toggle('active', tool === 'eraser');
+                            this.updateStatus(`Tool: ${tool}`);
+                        }
+
+                        clearMask() {
+                            this.drawingCtx.clearRect(0, 0, this.drawingCanvas.width, this.drawingCanvas.height);
+                            this.pathPoints = [];
+                            this.updateStatus('Drawing cleared');
+                        }
+
+                        toggleVideoPlayback() {
+                            if (this.videoElement.paused) {
+                                this.videoElement.play();
+                                this.isVideoPlaying = true;
+                                document.getElementById('indexrt-playPauseBtn').textContent = '⏸️ Pause';
+                                this.updateStatus('Video playing - pause to draw');
+                            } else {
+                                this.videoElement.pause();
+                                this.isVideoPlaying = false;
+                                document.getElementById('indexrt-playPauseBtn').textContent = '▶️ Play';
+                                this.updateStatus('Video paused - you can draw now');
+                            }
+                        }
+
+                        captureVideoFrame() {
+                            this.videoElement.pause();
+                            this.isVideoPlaying = false;
+                            document.getElementById('indexrt-playPauseBtn').textContent = '▶️ Play';
+                            this.drawVideoFrameToCanvas();
+                            this.updateStatus('Frame captured! Draw on this frame');
+                        }
+
+                        drawVideoFrameToCanvas() {
+                            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                            this.ctx.drawImage(this.videoElement, 0, 0, this.canvas.width, this.canvas.height);
+                        }
+
+                        setupCanvases() {
+                            const container = document.querySelector('.indexrt-canvas-container');
+                            const width = container.clientWidth;
+                            const height = container.clientHeight;
+
+                            if (!this.originalImage && !this.currentVideo) {
+                                this.canvas.width = width;
+                                this.canvas.height = height;
+                                this.drawingCanvas.width = width;
+                                this.drawingCanvas.height = height;
+                                this.clearMask();
+                            }
+                        }
+
+                        async processFile() {
+                            if (this.currentFileType === 'image') {
+                                await this.processImage();
+                            } else {
+                                await this.processVideo();
+                            }
+                        }
+
+                        async processImage() {
+                            if (!this.originalImage) {
+                                alert('Please upload an image first');
+                                return;
+                            }
+
+                            const processBtn = document.getElementById('indexrt-processBtn');
+                            processBtn.disabled = true;
+                            this.updateStatus('🔄 Processing image...');
+
+                            try {
+                                await this.processImageClientSide();
+                            } catch (error) {
+                                console.error('❌ Processing error:', error);
+                                this.updateStatus('❌ Error processing image');
+                                alert('Error: ' + error.message);
+                            } finally {
+                                processBtn.disabled = false;
+                            }
+                        }
+
+                        async processVideo() {
+                            if (!this.currentVideo || !this.videoFile) {
+                                alert('Please upload a video first');
+                                return;
+                            }
+
+                            const processBtn = document.getElementById('indexrt-processBtn');
+                            processBtn.disabled = true;
+                            const progressElement = document.getElementById('indexrt-processingProgress');
+                            const progressFill = document.getElementById('indexrt-progressFill');
+                            const progressText = document.getElementById('indexrt-progressText');
+
+                            progressElement.style.display = 'block';
+                            this.updateStatus('🔄 Processing video...');
+
+                            try {
+                                // For video processing, we'll use the original file and apply the mask
+                                await this.processVideoClientSide(progressFill, progressText);
+                            } catch (error) {
+                                console.error('❌ Processing error:', error);
+                                this.updateStatus('❌ Error processing video');
+                                alert('Error: ' + error.message);
+                            } finally {
+                                processBtn.disabled = false;
+                                progressElement.style.display = 'none';
+                            }
+                        }
+
+                        async processImageClientSide() {
+                            const resultCanvas = document.createElement('canvas');
+                            resultCanvas.width = this.canvas.width;
+                            resultCanvas.height = this.canvas.height;
+                            const resultCtx = resultCanvas.getContext('2d');
+
+                            // Draw the original content
+                            if (this.currentFileType === 'image') {
+                                resultCtx.drawImage(this.originalImage, 0, 0, resultCanvas.width, resultCanvas.height);
+                            } else {
+                                resultCtx.drawImage(this.videoElement, 0, 0, resultCanvas.width, resultCanvas.height);
+                            }
+
+                            // Apply the mask as alpha channel
+                            const maskData = this.drawingCtx.getImageData(0, 0, this.drawingCanvas.width, this.drawingCanvas.height);
+                            const resultData = resultCtx.getImageData(0, 0, resultCanvas.width, resultCanvas.height);
+                            
+                            for (let i = 0; i < maskData.data.length; i += 4) {
+                                // Use the white parts of the mask as the alpha channel
+                                const alpha = maskData.data[i]; // Red channel (since mask is white)
+                                resultData.data[i + 3] = alpha;
+                            }
+                            
+                            resultCtx.putImageData(resultData, 0, 0);
+
+                            // Download
+                            resultCanvas.toBlob((blob) => {
+                                const url = URL.createObjectURL(blob);
+                                const a = document.createElement('a');
+                                a.href = url;
+                                a.download = 'background_removed.png';
+                                document.body.appendChild(a);
+                                a.click();
+                                document.body.removeChild(a);
+                                URL.revokeObjectURL(url);
+
+                                this.updateStatus('✅ Image processed and downloaded!');
+                            }, 'image/png');
+                        }
+
+                        async processVideoClientSide(progressFill, progressText) {
+                            this.updateStatus('🎥 Creating video with transparency...');
+                            
+                            const tempVideo = document.createElement('video');
+                            tempVideo.src = URL.createObjectURL(this.videoFile);
+                            tempVideo.muted = true;
+                            
+                            await new Promise((resolve) => {
+                                tempVideo.onloadedmetadata = resolve;
+                            });
+
+                            const duration = tempVideo.duration;
+                            const fps = 15;
+                            const totalFrames = Math.min(Math.floor(duration * fps), 60);
+                            
+                            const processCanvas = document.createElement('canvas');
+                            processCanvas.width = tempVideo.videoWidth;
+                            processCanvas.height = tempVideo.videoHeight;
+                            const processCtx = processCanvas.getContext('2d');
+
+                            // Scale mask to video size
+                            const maskCanvas = document.createElement('canvas');
+                            maskCanvas.width = tempVideo.videoWidth;
+                            maskCanvas.height = tempVideo.videoHeight;
+                            const maskCtx = maskCanvas.getContext('2d');
+                            maskCtx.drawImage(this.drawingCanvas, 0, 0, tempVideo.videoWidth, tempVideo.videoHeight);
+                            const maskData = maskCtx.getImageData(0, 0, tempVideo.videoWidth, tempVideo.videoHeight);
+
+                            // Create video stream and recorder
+                            const stream = processCanvas.captureStream(fps);
+                            const mediaRecorder = new MediaRecorder(stream, { 
+                                mimeType: 'video/webm; codecs=vp9'
+                            });
+                            
+                            const chunks = [];
+                            
+                            return new Promise((resolve) => {
+                                mediaRecorder.ondataavailable = (e) => {
+                                    if (e.data.size > 0) chunks.push(e.data);
+                                };
+
+                                mediaRecorder.onstop = () => {
+                                    const blob = new Blob(chunks, { type: 'video/webm' });
+                                    const url = URL.createObjectURL(blob);
+                                    const a = document.createElement('a');
+                                    a.href = url;
+                                    a.download = 'background_removed_video.webm';
+                                    document.body.appendChild(a);
+                                    a.click();
+                                    document.body.removeChild(a);
+                                    URL.revokeObjectURL(url);
+                                    URL.revokeObjectURL(tempVideo.src);
+                                    
+                                    this.updateStatus('✅ Video processed! Downloading WebM file...');
+                                    progressText.textContent = 'Complete! Video downloaded.';
+                                    resolve();
+                                };
+
+                                mediaRecorder.start();
+
+                                let currentFrame = 0;
+                                
+                                const processFrame = async () => {
+                                    if (currentFrame >= totalFrames) {
+                                        mediaRecorder.stop();
+                                        return;
+                                    }
+
+                                    const time = (currentFrame / totalFrames) * duration;
+                                    tempVideo.currentTime = time;
+                                    
+                                    await new Promise((frameResolve) => {
+                                        tempVideo.onseeked = () => {
+                                            // Draw video frame
+                                            processCtx.clearRect(0, 0, processCanvas.width, processCanvas.height);
+                                            processCtx.drawImage(tempVideo, 0, 0, processCanvas.width, processCanvas.height);
+                                            
+                                            // Apply mask to alpha channel
+                                            const frameData = processCtx.getImageData(0, 0, processCanvas.width, processCanvas.height);
+                                            
+                                            for (let i = 0; i < maskData.data.length; i += 4) {
+                                                frameData.data[i + 3] = maskData.data[i];
+                                            }
+                                            
+                                            processCtx.putImageData(frameData, 0, 0);
+                                            
+                                            // Update progress
+                                            const progress = ((currentFrame + 1) / totalFrames) * 100;
+                                            progressFill.style.width = progress + '%';
+                                            progressText.textContent = `Processing frame ${currentFrame + 1}/${totalFrames}`;
+                                            
+                                            currentFrame++;
+                                            setTimeout(processFrame, 50);
+                                            frameResolve();
+                                        };
+                                    });
+                                };
+
+                                processFrame();
+                            });
+                        }
+
+                        resetAll() {
+                            document.getElementById('indexrt-fileInput').value = '';
+                            this.videoElement.src = '';
+                            this.videoElement.style.display = 'none';
+                            this.videoFile = null;
+
+                            const container = document.querySelector('.indexrt-canvas-container');
+                            container.style.width = '100%';
+                            container.style.height = '500px';
+
+                            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                            this.clearMask();
+                            this.setupCanvases();
+
+                            document.getElementById('indexrt-canvasPlaceholder').classList.remove('hidden');
+                            document.getElementById('indexrt-processBtn').disabled = true;
+                            document.getElementById('indexrt-processingProgress').style.display = 'none';
+
+                            this.originalImage = null;
+                            this.currentVideo = null;
+                            this.pathPoints = [];
+
+                            this.updateStatus('Ready to upload new file');
+                        }
+                    }
+
+                    document.addEventListener('DOMContentLoaded', () => {
+                        new BackgroundRemover();
+                    });
+                </script>
+                <!-- Original indexrt.html content ends here -->
+            </div>
+        </div>
+
+        <footer>
+            <p>Magic Background Remover &copy; 2023 | Powered by AI Technology</p>
+        </footer>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabId = tab.dataset.tab;
+                    
+                    // Remove active class from all tabs and contents
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding content
+                    tab.classList.add('active');
+                    document.getElementById(`${tabId}-tab`).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
